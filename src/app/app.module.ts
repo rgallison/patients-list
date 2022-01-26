@@ -14,6 +14,7 @@ import { ModalComponent } from './core/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { PatientFormComponent } from './patients/patient-form/patient-form.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PatientFormComponent } from './patients/patient-form/patient-form.compo
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
+    MatAutocompleteModule,
     BrowserAnimationsModule
   ],
   providers: [],
