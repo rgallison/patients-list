@@ -1,0 +1,43 @@
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="form-field" appearance="fill">
+        <mat-label for="name">Name: </mat-label>
+        <input id="name" type="text" matInput formControlName="name">
+    </mat-form-field>
+
+    <div formGroupName="address">
+        <h2>Address</h2>
+
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label for="street">Street:</mat-label>
+            <input id="street" type="text" matInput formControlName="street">
+        </mat-form-field>
+
+        <mat-form-field class="half-field" appearance="fill">
+            <mat-label for="city">City:</mat-label>
+            <input id="city" type="text" matInput formControlName="city">
+        </mat-form-field>
+
+        <mat-form-field class="quarter-field" appearance="fill">
+            <mat-label for="state">State:</mat-label>
+            <input id="state" type="text" matInput formControlName="state">
+        </mat-form-field>
+
+        <mat-form-field class="quarter-field no-margin" appearance="fill">
+            <mat-label for="zip">Zip Code: </mat-label>
+            <input id="zip" type="text" matInput formControlName="zip">
+        </mat-form-field>
+    </div>
+        
+    <h2>Medical Data:</h2>
+
+        <!-- <label for="name">Clinic: </label>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let clinic of clinics" [value]="clinic">
+              {{clinic}}
+            </mat-option>
+        </mat-autocomplete> -->
+
+        <!-- <label for="name">MSN: </label>
+        <input id="name" type="number" [formControl]="msn"> -->
+</form>

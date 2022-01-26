@@ -1,0 +1,155 @@
+/* You can add global styles to this file, and also import other style files */
+@list-shade: #b0b0b0;
+@list-background: #ebebeb;
+
+main {
+    width: 75%
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+h1 {
+    font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+label {
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* List Grids */
+.list-container {
+    -webkit-box-shadow: 1px 1px 3px 1px @list-shade; 
+    box-shadow: 1px 1px 3px 1px @list-shade;
+
+    .row{
+        display: flex;
+        
+        &:nth-child(even) {
+            background-color: @list-background;
+        }
+        
+    }
+
+    .col {
+        flex: 1 1 auto;
+        width: 40%;
+        padding: 8px 12px;
+        
+        
+    }
+
+    .name {
+        width: 20%
+    }
+}
+
+button.mat-raised-button {
+    margin: 10px;
+    margin-left: 0;
+}
+
+a,
+a:visited,
+a:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #125699;
+}
+
+footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+}
+
+/* forms */
+form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+
+    .form-field {
+        width: 100%;
+    }
+
+    .half-field, .third-field, .quarter-field {
+        padding-right: 5px;
+        box-sizing: border-box;
+
+        &.no-margin {
+            padding-right: 0;
+        }
+    }
+
+    .half-field {
+        width: 50%;
+    }
+
+    .third-field {
+        width: 32%;
+    }
+
+    .quarter-field {
+        width: 25%;
+    }
+
+}
+
+/* Modal Customizations */
+.mat-dialog-container { 
+    position: relative;
+}
+
+/* Helpers */
+.a-left {
+    text-align: left;
+}
+
+.a-right {
+    text-align: right;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 575px) {
+
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

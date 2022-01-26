@@ -1,0 +1,14 @@
+<h1>Patients</h1>
+<div class="list-container">
+    <div class="row" *ngFor="let patient of patients">
+        <a class="col name link" (click)="openPatientViewModal(patient)">
+            <fa-icon icon="eye" size="xs"></fa-icon>
+            {{patient.name}}
+        </a>
+        <div class="col address">{{patient.address}}</div>
+        <div class="col clinic">{{patient.clinic}}</div>
+    </div>    
+</div>
+<p class="a-right">
+    <button mat-button mat-raised-button color="primary" id="add-patient-button" (click)="openPatientAddModal()">Add Patient</button>
+</p>

@@ -1,0 +1,28 @@
+<div>
+    <fa-icon icon="times" class="close" (click)="closeDialog()"></fa-icon>
+    <h1 mat-dialog-title>{{ modalData.header }}</h1>
+    
+    <div mat-dialog-content>
+        <!-- <div *ngIf="modalData.content" [innerHTML]="modalData.content"></div> -->
+        <ng-container *ngComponentOutlet="modalData.content;injector: injector;"></ng-container>
+    </div>
+    <div mat-dialog-actions class="modal-actions">
+        <button
+            mat-button
+            *ngIf="modalData.confirmButtonLabel"
+            (click)="handleModalSubmit()"
+            mat-raised-button
+            color="primary">
+            {{ modalData.confirmButtonLabel }}
+        </button>
+        <button
+            mat-button
+            cdkFocusInitial
+            *ngIf="modalData.cancelButtonLabel"
+            (click)="closeDialog()"
+            mat-raised-button
+            color="accent">
+            {{ modalData.cancelButtonLabel }}
+        </button>
+    </div>
+</div>

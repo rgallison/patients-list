@@ -1,0 +1,12 @@
+<div class="injected-content">
+    <div><label>MSN:</label> {{patient.msn}}</div>
+    <div><label>Address:</label> {{patient.address}}</div>
+    <div><label>Sex:</label> {{patient.sex}}</div>
+    <div><label>Height:</label> {{patient.height.value}}{{patient.height.unit}}</div>
+    <div><label>Weight:</label> {{patient.weight.value}}{{patient.weight.unit}}</div>
+    <br>
+    <div>
+        <label>Notes:</label>
+        <div [innerHTML]="patient.notes"></div>
+    </div>
+</div>
