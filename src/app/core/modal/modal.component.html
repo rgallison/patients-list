@@ -4,7 +4,8 @@
     
     <div mat-dialog-content>
         <!-- <div *ngIf="modalData.content" [innerHTML]="modalData.content"></div> -->
-        <ng-container *ngComponentOutlet="modalData.content;injector: injector;"></ng-container>
+        <!-- <ng-container *ngComponentOutlet="modalData.content;injector: injector;"></ng-container> -->
+        <ng-template #modalContent></ng-template>
     </div>
     <div mat-dialog-actions class="modal-actions">
         <button

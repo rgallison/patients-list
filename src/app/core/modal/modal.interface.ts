@@ -3,7 +3,7 @@ export interface Modal {
     confirmButtonLabel?: string;
     header: string;
     content?: any;
-    inputs?: any;
-    callbackMethod: () => void;
+    input?: any;
+    callbackMethod: (data:any) => void;
   }
   

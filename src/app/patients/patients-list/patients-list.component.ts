@@ -1,4 +1,4 @@
-import { Component, Inject, InjectionToken, Injector, Input, OnInit } from '@angular/core';
+import { Component, ComponentFactory, Inject, InjectionToken, Injector, Input, OnInit } from '@angular/core';
 import{ consts } from '../../core/global-constants';
 import { Patient } from '../patient';
 import { PATIENTS } from '../mocks/mock-patients';
@@ -26,10 +26,10 @@ export class PatientsListComponent implements OnInit {
     const modalConfig: Modal = {
       header: patient.name,
       content: ViewPatientModalComponent,
-      inputs: Injector.create({providers: [{provide: Patient, useValue: patient}], parent: this.injector}),
+      input: { patient },
       confirmButtonLabel: 'Close',
-      callbackMethod: () => {
-
+      callbackMethod: (data) => {
+        console.log(data);
       },
     }
     this.modal.open(ModalComponent, {
@@ -44,8 +44,8 @@ export class PatientsListComponent implements OnInit {
       content: PatientFormComponent,
       cancelButtonLabel: 'Cancel',
       confirmButtonLabel: 'Add',
-      callbackMethod: () => {
-
+      callbackMethod: (data) => {
+        this.patients.push(new Patient(data.patient));
       },
     };
     this.modal.open(ModalComponent, {
@@ -61,6 +61,5 @@ export class PatientsListComponent implements OnInit {
   templateUrl: './view-patient.modal.html'
 })
 export class ViewPatientModalComponent {  
-  constructor(public patient: Patient){
-  }
+  @Input() patient: Patient;
 }
