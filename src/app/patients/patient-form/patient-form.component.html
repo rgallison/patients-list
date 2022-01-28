@@ -1,4 +1,4 @@
-<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="patientForm">
 
     <mat-form-field class="form-field" appearance="fill">
         <mat-label for="name">Name: </mat-label>
@@ -6,15 +6,13 @@
     </mat-form-field>
 
     <mat-form-field class="form-field" appearance="fill">
-        <mat-label>Date of Birth</mat-label>
-        <input matInput [matDatepicker]="dobPicker">
+        <mat-label>Date of Birth:</mat-label>
+        <input matInput [matDatepicker]="dobPicker" formControlName="dob">
         <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
         <mat-datepicker #dobPicker></mat-datepicker>
     </mat-form-field>
 
     <div formGroupName="address">
-        <h2>Address</h2>
-
         <mat-form-field class="form-field" appearance="fill">
             <mat-label for="street">Street:</mat-label>
             <input id="street" type="text" matInput formControlName="street">
@@ -37,7 +35,7 @@
 
         <mat-form-field class="quarter-field no-margin" appearance="fill">
             <mat-label for="zip">Zip Code: </mat-label>
-            <input id="zip" type="text" matInput formControlName="zip">
+            <input id="zip" type="text" matInput formControlName="zipcode">
         </mat-form-field>
     </div>
         
@@ -59,8 +57,8 @@
     </mat-form-field>
 
     <mat-radio-group formControlName="sex">
-        <mat-radio-button value="M">Male</mat-radio-button>
-        <mat-radio-button value="F">Female</mat-radio-button>
+        <mat-radio-button value="M">Male *</mat-radio-button>
+        <mat-radio-button value="F">Female *</mat-radio-button>
     </mat-radio-group>
 
     <div formGroupName="height">

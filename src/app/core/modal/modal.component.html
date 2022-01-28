@@ -13,6 +13,7 @@
             *ngIf="modalData.confirmButtonLabel"
             (click)="handleModalSubmit()"
             mat-raised-button
+            [disabled]="disableButton"
             color="primary">
             {{ modalData.confirmButtonLabel }}
         </button>

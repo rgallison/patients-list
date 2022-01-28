@@ -1,7 +1,9 @@
 import { Component, Inject, ViewContainerRef, ViewChild, ComponentFactoryResolver, ComponentFactory, ComponentRef } from '@angular/core';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ModalActionsService } from '../../services/modal-actions.service';
+
+const VALID = 'VALID';
+const INVALID = 'INVALID';
 
 @Component({
   selector: 'app-modal',
@@ -12,6 +14,7 @@ export class ModalComponent{
   @ViewChild("modalContent", { read: ViewContainerRef }) contentContainer: ViewContainerRef ;
   componentRef: ComponentRef<any>;
   contentOutput: any;
+  disableButton: boolean;
 
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
@@ -40,9 +43,10 @@ export class ModalComponent{
     if (this.modalData.input) {
       Object.assign(this.componentRef.instance, this.modalData.input);
     }
-    console.log(this.componentRef)
+
     if (this.componentRef.instance.output) {
       this.componentRef.instance.output.subscribe(val => {
+        this.disableButton = val.hasOwnProperty('isValid') ? val.isValid === INVALID : false;
         this.contentOutput = val;
       });
     }

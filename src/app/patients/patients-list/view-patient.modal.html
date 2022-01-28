@@ -1,11 +1,13 @@
 <div class="injected-content">
+    <div><label>Date Of Birth:</label> {{patient.formattedDate()}}</div>
+    <div *ngIf="patient.address"><label>Address:</label> {{patient.formattedAddress()}}</div>
+    <h2>Medical Data</h2>
     <div><label>MSN:</label> {{patient.msn}}</div>
-    <div><label>Address:</label> {{patient.address}}</div>
     <div><label>Sex:</label> {{patient.sex}}</div>
-    <div><label>Height:</label> {{patient.height.value}}{{patient.height.unit}}</div>
-    <div><label>Weight:</label> {{patient.weight.value}}{{patient.weight.unit}}</div>
+    <div *ngIf="patient.height.value"><label>Height:</label> {{patient.height.value}}{{patient.height.unit}}</div>
+    <div *ngIf="patient.weight.value"><label>Weight:</label> {{patient.weight.value}}{{patient.weight.unit}}</div>
     <br>
-    <div>
+    <div *ngIf="patient.notes">
         <label>Notes:</label>
         <div [innerHTML]="patient.notes"></div>
     </div>

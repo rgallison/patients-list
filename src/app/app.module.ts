@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';  
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faEye, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faTimes, faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import { PatientFormComponent } from './patients/patient-form/patient-form.component';
-import { PatientsListComponent } from './patients/patients-list/patients-list.component';
+import { PatientsListComponent, PatientViewModalComponent, PatientDeleteModalComponent } from './patients/patients-list/patients-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ModalComponent } from './core/modal/modal.component';
@@ -26,9 +27,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppComponent,
     PatientsListComponent,
     ModalComponent,
-    PatientFormComponent
+    PatientFormComponent,
+    PatientViewModalComponent,
+    PatientDeleteModalComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -49,6 +53,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 export class AppModule {
   constructor(library: FaIconLibrary) {
     // Add an icon to the library for convenient access in other components
-    library.addIcons(faEye, faTimes);
+    library.addIcons(faEye, faTimes, faTrash, faEdit);
   }
 }

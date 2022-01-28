@@ -14,18 +14,25 @@ h5,
 h6 {
     margin: 8px 0;
     font-weight: bold;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-h1 {
-    font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+h1, .mat-typography h1 {
+    font: 700 24px/32px Roboto, "Helvetica Neue", sans-serif;
 }
+
+h2, .mat-typography h2 {
+    margin: 16px 0 8px;
+    font: 600 18px/24px Roboto, "Helvetica Neue", sans-serif;
+}
+
 
 label {
-    font-weight: bold;
+    font-weight: 500;
 }
 
-p {
-    margin: 0;
+p, .mat-typography p {
+    margin: 10px 0;
 }
 
 .spacer {
@@ -59,8 +66,21 @@ p {
         flex: 1 1 auto;
         width: 40%;
         padding: 8px 12px;
-        
-        
+    }
+
+    .action-icons {
+        width: 80px;
+
+        fa-icon {
+            cursor: pointer;
+            margin-right: 10px;
+            width: 15px;
+            display: inline-block;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 
     .name {
@@ -73,9 +93,10 @@ button.mat-raised-button {
     margin-left: 0;
 }
 
-a,
+a, 
 a:visited,
 a:hover {
+    cursor: pointer;
     color: #1976d2;
     text-decoration: none;
 }

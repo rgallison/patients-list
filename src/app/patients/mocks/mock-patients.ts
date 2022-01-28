@@ -9,8 +9,8 @@ export const PATIENTS: Patient[] = [
     sex: 'F',
     weight: { value: 68, unit: 'kg' },
     height: { value: 160, unit: 'cm' },
-    dob: '1/14/1981',
-    notes: '<p>Airway obstruction alcoholism arteries and veins arthritis chromosomes constipation er glycogen iv kidney laparoscopy lung function tests lymph node nicotine nutrition pneumonia sphenopalatineganglioneuralgia spirometer triggers umbilical cord white blood cells.</p>'
+    dob: new Date('1/14/1981'),
+    notes: 'Airway obstruction alcoholism arteries and veins arthritis chromosomes constipation er glycogen iv kidney laparoscopy lung function tests lymph node nicotine nutrition pneumonia sphenopalatineganglioneuralgia spirometer triggers umbilical cord white blood cells.'
   }),
   new Patient ({ 
     name: 'Jesse North',
@@ -20,7 +20,7 @@ export const PATIENTS: Patient[] = [
     sex: 'M',
     weight: { value: 65, unit: 'kg' },
     height: { value: 180, unit: 'cm' },
-    dob: '6/22/1970'
+    dob: new Date('6/22/1970')
    }),
   new Patient ({ 
     name: 'Reema Chan',
@@ -30,6 +30,6 @@ export const PATIENTS: Patient[] = [
     sex: 'F',
     weight: { value: 51, unit: 'kg' },
     height: { value: 150, unit: 'cm' },
-    dob: '11/3/1966'
+    dob: new Date('11/3/1966')
   })];
 
